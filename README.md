@@ -40,44 +40,7 @@ That's why threshold 0.40 was chosen over higher-accuracy options: it's
 the one that catches the most fraud.
 
 
-## Project structure
 
-```
-bank_fraud/
-├── data/                  # transaction data (raw + processed)
-├── models/                # trained model files
-├── src/
-│   ├── data_ingestion.py       # loads and validates data
-│   ├── preprocessing.py        # cleans and prepares data
-│   ├── feature_engineering.py  # builds fraud-signal features
-│   ├── model_building.py       # trains the model
-│   └── model_evaluation.py     # tests performance, reports results
-├── app.py                 # interactive app — check any transaction live
-└── requirements.txt
-```
-
-## Quick start
-
-```bash
-conda create -n fraud python=3.11 -y
-conda activate fraud
-pip install -r requirements.txt
-
-python src/data_ingestion.py
-python src/preprocessing.py
-python src/feature_engineering.py
-python src/model_building.py
-python src/model_evaluation.py
-```
-
-## Try it live
-
-```bash
-streamlit run app.py
-```
-
-Enter a transaction's details and get an instant fraud probability and
-verdict — the same logic the bank's system would use in production.
 
 ## Roadmap
 
@@ -86,27 +49,13 @@ verdict — the same logic the bank's system would use in production.
 - Add a manual-review queue for borderline cases, instead of one hard cutoff
 - Track performance over time as the model retrains on new data
 
-## Open for collaboration
-
-This project is open to collaborators — data scientists, fraud/risk domain
-experts, or engineers interested in fraud detection systems are welcome to
-contribute. Open an issue or reach out if you'd like to get involved.
-
-**Contact:**
-- LinkedIn: [linkedin.com/in/donatusvictor](https://www.linkedin.com/in/donatusvictor)
-- Email: donatusvictor76@gmail.com
-- Phone: +234 813 779 0780
-
-
-
-
 # ML Pipeline
 
 A modular, production-style ML pipeline: **Ingestion → Preprocessing → model_building → Evaluation**.
 
 ## Structure
 ```
-ml_pipeline/
+Bank_Fraud/
 ├── configs/config.yaml       # all settings — no hardcoded values in code
 ├── data/raw/                 # put your input file here (csv/xlsx/parquet)
 ├── data/processed/           # (optional) intermediate outputs
@@ -126,6 +75,7 @@ ml_pipeline/
 pip install -r requirements.txt
 
 ```
+
 # Build & Track ML Pipelines with DVC
 
 ## How to run?
@@ -136,6 +86,13 @@ conda activate test
 
 ## pip install -r requirements.txt
 python -m pip install -r requirements.txt
+
+## Try it live
+
+```bash
+streamlit run app.py
+```
+Enter a transaction's details and get an instant fraud probability and verdict, the same logic the bank's system would use in production.
 
 ## DVC Commands
 
@@ -148,3 +105,15 @@ dvc repro
 dvc dag
 
 dvc metrics show# FraudGuard
+
+
+## Open for collaboration
+
+This project is open to collaborators — data scientists, fraud/risk domain
+experts, or engineers interested in fraud detection systems are welcome to
+contribute. Open an issue or reach out if you'd like to get involved.
+
+**Contact:**
+- LinkedIn: [linkedin.com/in/donatusvictor](https://www.linkedin.com/in/donatusvictor)
+- Email: donatusvictor76@gmail.com
+- Phone: +234 813 779 0780

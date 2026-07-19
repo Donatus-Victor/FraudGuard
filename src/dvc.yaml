@@ -1,0 +1,45 @@
+stages:  
+  data_ingestion:  # data ingestion stage
+    cmd: python src/data_ingestion.py
+    deps:
+      - src/data_ingestion.py   ## code dependency
+    outs:  ## output folder created by the script
+      - data/raw
+
+#data processing
+  data_preprocessing:
+    cmd: python src/data_preprocessing.py
+    deps:
+      - data/raw
+      - src/data_preprocessing.py
+    outs:
+      - data/processed
+
+
+#feature engineering
+  feature_engineering:
+    cmd: python src/feature_engineering.py
+    deps:
+      - data/processed
+      - src/feature_engineering.py
+    outs:
+      - data/features
+
+
+# model building
+  model_building:
+    cmd: python src/model_building.py
+    deps:
+      - data/features
+      - src/model_building.py
+    outs:
+      - model.pkl
+
+#model evaluation
+  model_evaluation:
+    cmd: python src/model_evaluation.py
+    deps:
+        - model.pkl
+        - src/model_evaluation.py
+    metrics:
+        - metrics.json

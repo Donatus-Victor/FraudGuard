@@ -1,0 +1,36 @@
+data:
+  raw_path: "data/raw/dataset.csv"
+  processed_path: "data/processed/"
+  target_column: "target"
+  test_size: 0.2
+  random_state: 42
+
+preprocessing:
+  numeric_impute_strategy: "median"     # mean | median | most_frequent
+  categorical_impute_strategy: "most_frequent"
+  scale_numeric: true
+  encode_categorical: true
+  drop_columns: []                       # columns to drop before training, e.g. ["id"]
+
+model:
+  type: "random_forest"                  # random_forest | logistic_regression | xgboost
+  params:
+    n_estimators: 200
+    max_depth: 10
+    random_state: 42
+
+training:
+  cv_folds: 5
+  scoring: "f1_weighted"
+
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1", "roc_auc"]
+  save_report_path: "logs/evaluation_report.json"
+
+artifacts:
+  model_output_path: "models/model.pkl"
+  preprocessor_output_path: "models/preprocessor.pkl"
+
+logging:
+  level: "INFO"
+  log_file: "logs/pipeline.log"
