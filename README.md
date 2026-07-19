@@ -3,6 +3,8 @@
 A Machine Learning fraud detection system for banking transactions. It scores  every transaction in real time and flags the ones likely to be fraudulen
 before money leaves the bank.
 
+🔗 Live demo: fraud-guard-protection.streamlit.app
+
 ## The problem this solves
 
 Banks lose money to fraudulent transactions such as stolen cards, account takeovers, money-laundering transfers. Reviewing every transaction manually doesn't scale, and rule-based checks e.g ("block if amount > $1000") are easy for fraudsters to get around and cause too many false alarms.
@@ -100,11 +102,13 @@ git init
 
 dvc init
 
+notepad dvc.yaml
+
 dvc repro
 
 dvc dag
 
-dvc metrics show# FraudGuard
+dvc metrics show
 
 
 ## Open for collaboration
