@@ -117,6 +117,8 @@ This project is open to collaborators — data scientists, fraud/risk domain
 experts, or engineers interested in fraud detection systems are welcome to
 contribute. Open an issue or reach out if you'd like to get involved.
 
+**Streamlit Link:** https://fraud-guard-protection.streamlit.app/
+
 **Contact:**
 - LinkedIn: [linkedin.com/in/donatusvictor](https://www.linkedin.com/in/donatusvictor)
 - Email: donatusvictor76@gmail.com
